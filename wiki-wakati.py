@@ -17,7 +17,7 @@ while True:
     i += 1
 
     malist = okt.pos(line, norm=True, stem=True)
-    r=[]
+    r = []
     for word in malist:
         if not word[1] in ["Josa", "Eomi", "Punctuation"]:
             writeFp.write(word[0] + " ")
