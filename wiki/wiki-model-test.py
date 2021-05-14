@@ -1,4 +1,5 @@
 from gensim.models import Word2Vec
+from gensim.models import word2vec
 model = Word2Vec.load('wiki.model')
 
 model.wv.most_similar(positive=['python', '파이썬'])

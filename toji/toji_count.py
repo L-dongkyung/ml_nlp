@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from konlpy.tag import Okt
 
 # utf-16 encoding
-fp = codecs.open("bexx0003.txt", "r", encoding="utf-16")
+fp = codecs.open("BEXX0003.txt", "r", encoding="utf-16")
 soup = BeautifulSoup(fp, "html.parser")
 body = soup.select_one("body > text")
 text = body.getText()
