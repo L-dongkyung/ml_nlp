@@ -42,6 +42,7 @@ def make_sentence(dic):
         if w3 == ".": break
         w1, w2 = w2, w3
     ret = "".join(ret)
+    '''  # 띄어쓰기 생략
     # 띄어쓰기
     params = urllib.parse.urlencode({"_callback": "", "q": ret})
     # 네이버 맞춤법 검사기를 사용
@@ -51,7 +52,8 @@ def make_sentence(dic):
     data = json.loads(data)
     data = data["message"]["result"]["html"]
     data  = BeautifulSoup(data, "html.parser").getText()
-    return data
+    '''
+    return ret  # data
 
 def word_choice(sel):
     keys = sel.keys()
@@ -88,3 +90,15 @@ for i in range(3):
     s = make_sentence(dic)
     print(s)
     print("------")
+
+
+'''
+실행 결과:
+자넨몸이아파서
+낯짝보아하니간밤에잠이깨어옷매무새를고치며으름장을놓다가땅바닥에흩어진곡식알을낳기도전에계영한일이네만하기는그만갔이믄그라십니까뒤통수에들으며용이는망태를본다.
+------
+노젓는소리로울었다.
+------
+자꾸자꾸올라가믄수미산이있다캅디다.
+------
+'''
