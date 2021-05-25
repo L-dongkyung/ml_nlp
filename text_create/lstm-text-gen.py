@@ -57,11 +57,11 @@ def sample(preds, temperature=1.0):
     return np.argmax(probas)
 
 # 학습시키고 텍스트 생성하기 반복
-for iteration in range(1, 60):
+for iteration in range(1, 6):
     print()
     print('-'*50)
     print('반복=', iteration)
-    model.fit(x, y, batch_size=128, epochs=1)
+    model.fit(x, y, batch_size=500, epochs=5)
     # 임의의 시작 텍스트 선택하기
     start_index = random.randint(0, len(text) - maxlen - 1)
     # 다양한 다양성의 문장 생성
